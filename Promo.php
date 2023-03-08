@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-    include_once './header.php';
+    include_once './parts/header.php';
     ?>
     <section class="main-sec">
         <div class="wrapper">
@@ -89,7 +89,7 @@
         </div>
     </section>
     <?php
-    include_once './footer.php';
+    require_once './parts/footer.php';
     ?>
 
 </body>

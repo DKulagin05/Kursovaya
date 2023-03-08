@@ -1,26 +1,23 @@
-// $('.slider-for').slick({
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     arrows: false,
-//     fade: true,
-//     asNavFor: '.slider-nav'
-// });
-// $('.slider-nav').slick({
-//     slidesToShow: 3,
-//     slidesToScroll: 1,
-//     asNavFor: '.slider-for',
-//     dots: true,
-//     focusOnSelect: true
-// });
-//
-// $('a[data-slide]').click(function(e) {
-//     e.preventDefault();
-//     var slideno = $(this).data('slide');
-//     $('.slider-nav').slick('slickGoTo', slideno - 1);
-// });
-//
-// $('.multiple-items').slick({
-//     infinite: true,
-//     slidesToShow: 3,
-//     slidesToScroll: 3
-// });
+const headMinus = document.querySelector('.head_booking_minus');
+const headPlus = document.querySelector('.head_booking_plus');
+const headCount = document.querySelector('.head_booking_count');
+
+let headCountNum = 1;
+
+function updateCount() {
+    headCount.innerHTML = headCountNum;
+}
+
+headMinus.addEventListener('click', () => {
+    if (headCountNum > 1) {
+        headCountNum--;
+        updateCount();
+    }
+});
+
+headPlus.addEventListener('click', () => {
+    if (headCountNum < 9) {
+        headCountNum++;
+        updateCount();
+    }
+});

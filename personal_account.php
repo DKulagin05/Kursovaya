@@ -7,7 +7,6 @@ $result = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($result) > 0) {
     $user = mysqli_fetch_assoc($result);
-//var_dump($user);
 }
 ?>
 <!doctype html>
@@ -18,11 +17,12 @@ if (mysqli_num_rows($result) > 0) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="assets/js/PersonalPage.js" defer></script>
     <title>Document</title>
 </head>
 <body>
 <?php
-include_once 'header.php';
+include_once './parts/header.php';
 ?>
 <div class="personal_info">
     <div class="wrapper">
@@ -53,42 +53,68 @@ include_once 'header.php';
 </div>
 <div class="personal_info_booking">
     <div class="wrapper">
-        <div class="personal_info_booking_header">
-            <h1>Ваши бронирования</h1>
-        </div>
-        <div class="personal_info_booking_unit">
-            <img src="./assets/img/rent_ico.png" alt="#">
-            <div class="info_booking_body">
-                <div class="info_booking_header">
-                    <h1>Стандарт с односпальной кроватью</h1>
-                </div>
-                <div class="info_booking_specifications">
-                    <div class="specifications_square">
-                        <img src="./assets/img/square.png" alt="#">
-                        <p>16 кв.м</p>
+        <div class="personal_info_booking_body">
+            <div class="personal_info_booking_header">
+                <h1>Ваши бронирования</h1>
+            </div>
+            <div class="personal_info_booking_unit">
+                <img src="./assets/img/rent_ico.png" alt="#">
+                <div class="info_booking_body">
+                    <div class="info_booking_header">
+                        <h1>Стандарт с односпальной кроватью</h1>
                     </div>
-                    <div class="specifications_person">
-                        <img src="./assets/img/person.png" alt="#">
-                        <p>1 чел.</p>
+                    <div class="info_booking_specifications">
+                        <div class="specifications_square">
+                            <img src="./assets/img/square.png" alt="#">
+                            <p>16 кв.м</p>
+                        </div>
+                        <div class="specifications_person">
+                            <img src="./assets/img/person.png" alt="#">
+                            <p>1 чел.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="info_booking_price_btn">
-                    <div class="info_booking_price">
-                        <h1>Цена</h1>
-                        <p>2.300р</p>
+                    <div class="info_booking_price_btn">
+                        <div class="info_booking_price">
+                            <h1>Цена</h1>
+                            <p>2.300р</p>
+                        </div>
+                        <div class="info_booking_btn">Отменить</div>
                     </div>
-                    <div class="info_booking_btn">Отменить</div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
 
 
 <?php
+//require_once './parts/footer.php';
+//
+//// Подключаемся к базе данных
+//$dsn = 'mysql:host=localhost;dbname=Coursework';
+//$username = 'root';
+//$password = '';
+//$options = [
+//    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+//    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+//    PDO::ATTR_EMULATE_PREPARES => false,
+//];
+//try {
+//    $pdo = new PDO($dsn, $username, $password, $options);
+//} catch (\PDOException $e) {
+//    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+//}
+//
+//// Выполняем запрос на получение данных из базы данных
+//$stmt = $pdo->query('SELECT * FROM Users');
+//$data = $stmt->fetchAll();
+//
+//// Выводим данные в формате JSON
+//header('Content-Type: application/json');
+//echo json_encode($data);
 
-include_once 'footer.php';
-?>
+//?>
 </body>
 </html>

@@ -6,15 +6,15 @@
                 <input type="submit" value="Подписаться">
             </div>
             <div class="footer_links">
-                <a href="./contacts.php">Контакты</a>
-                <a href="./services.php">Услуги</a>
+                <a href="../contacts.php">Контакты</a>
+                <a href="../services.php">Услуги</a>
             </div>
             <div class="footer_pay_var">
                 <img src="/assets/img/qiwi.png" alt="#">
                 <img src="/assets/img/paypal.png" alt="#">
             </div>
             <div class="footer_logo">
-                <a href="./mainPage.php"><img src="/assets/img/footer_logo.png" alt="#"></a>
+                <a href="../mainPage.php"><img src="/assets/img/footer_logo.png" alt="#"></a>
             </div>
         </div>
     </div>

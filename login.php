@@ -11,18 +11,19 @@ $conn = new mysqli("localhost", "root", "",'Coursework');
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="assets/js/login.js" defer></script>
     <title>Document</title>
 </head>
 <body>
 <div class="reg_header">
     <?php
-    include_once 'header.php';
+    include_once './parts/header.php';
     ?>
 </div>
 <div class="registration_sec">
     <div class="wrapper">
         <div class="reg_body">
-            <form action="" method="get">
+            <form action="" method="get" id="loginForm">
                 <h1>Авторизация</h1>
                 <div class="reg_inputs">
                     <div class="input_label_box">
@@ -44,7 +45,7 @@ $conn = new mysqli("localhost", "root", "",'Coursework');
 
                     if (mysqli_num_rows($result) > 0) {
                         $user = mysqli_fetch_assoc($result);
-//                        var_dump($user['password']);
+//                        var_dump($usegit pur['password']);
                         if ($password === $user['password']) {
                             $_SESSION['auth'] = true;
                             $_SESSION['id'] = $user['id'];
@@ -57,17 +58,20 @@ $conn = new mysqli("localhost", "root", "",'Coursework');
                     }
                 }
                 ?>
-                <input type="submit" value="Войти">
+<!--                <button class="login_submit">Войти</button>-->
+                <input class="login_submit" value="Войти" type="submit">
                 <div class="registration_var">
                     <p>Нет аккаунта?</p>
                     <a href="./registration.php">Зарегистрируйтесь</a>
+                    <a href="./assets/api/login.php">Ссылка на говно</a>
+
                 </div>
             </form>
         </div>
     </div>
 </div>
 <?php
-require_once 'footer.php';
+require_once './parts/footer.php';
 ?>
 </body>
 </html>

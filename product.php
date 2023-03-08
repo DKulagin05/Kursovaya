@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="assets/js/Product.js" defer></script>
+    <script src="assets/js/Main.js" defer></script>
     <title>Document</title>
 </head>
 <body>
 <?php
-include_once 'header.php';
+include_once './parts/header.php';
 ?>
     <section class="filters">
         <div class="wrapper">
             <div class="filters-title">
-                <div class="filters-title-text">Тату машинки</div>
+                <div class="filters-title-text">Каталог</div>
                 <div class="filters-title-filters">
                     <div class="products-selects">
                         <div class="type">
@@ -58,17 +60,19 @@ include_once 'header.php';
                     <p>Только доступные сейчас</p>
                     <label class="switch">
                         <input type="checkbox" checked>
-                        <span class="slider"></span>
+                        <span class="catalog_switch"></span>
                     </label>
                 </div>
                 <div class="filters-more-fliters-sort">
                     <p>Сортировка</p>
                     <select name="filters-more-fliters-sort">
                         <option value="1">Популярные</option>
-<!--                        <option value="2">По алфавиту</option>-->
                         <option value="3">Дешёвые</option>
                         <option value="4">Дорогие</option>
                     </select>
+                </div>
+                <div class="filters-more-fliters-sort">
+                    <button class="sort_btn">Отсортировать</button>
                 </div>
             </div>
 <!--            <div class="filters-more-mobile">-->
@@ -80,49 +84,16 @@ include_once 'header.php';
     <section class="first-sec">
         <div class="wrapper">
             <div class="products-list">
-                <?php
-                $product_count = 10;
-                for ($i=0;$i<$product_count;$i++) {
-                    echo '<div class="product">
-            
-            <div class="product-img">
-                <img src="assets/img/background_head.png" alt="#">
-            </div>
-            <div class="product-img-slider">
-                <div class="type-product">
-                    <input type="radio" name="switch" id="slider_1" checked>
-                    <input type="radio" name="switch" id="slider_2">
-                    <input type="radio" name="switch" id="slider_3">
-                    <input type="radio" name="switch" id="slider_4">
 
-                    <div class="searches">
-                        <label for="slider_1"></label>
-                        <label for="slider_2"></label>
-                        <label for="slider_3"></label>
-                        <label for="slider_4"></label>
-                    </div>
-                </div>
-            </div>
-            <div class="product-name">
-                <h1>Foxxx Kitsune Mini Black Vintage RCA</h1>
-                <p>6 000 ₽</p>
-            </div>
-            
-                </div>';
-                }
-                ?>
-<!--                <div class="product-button">-->
-<!--                    Забронировать-->
-<!--                </div>-->
             </div>
             <div class="product-list-button">
-                <div class="product-list-button-more">Показать ещё</div>
+                <div class="product-list-button-more" onclick="add_products()">Показать ещё</div>
             </div>
         </div>
     </section>
     
 <?php
-include_once 'footer.php';
+require_once './parts/footer.php';
 ?>
 </body>
 </html>

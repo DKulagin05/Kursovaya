@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Указываем box sizing */
 *,
 *::before,
@@ -35,6 +37,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    position: relative;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -76,6 +79,12 @@ select {
         scroll-behavior: auto !important;
     }
 }
+.true {
+    display: block;
+}
+.false {
+    display: none;
+}
 .hide {
     display: none;
 }
@@ -96,6 +105,9 @@ select {
 .header_links {
     display: flex;
     gap: 30px;
+}
+.header_links_mobile {
+    display: none;
 }
 .header img {
     width: 50px;
@@ -134,13 +146,15 @@ select {
     position: absolute;
     top: 150px;
     /*margin: 150px 0 0 0;*/
-    background-color: #A35429;
+    background-color: #916d48;
     padding: 30px 50px;
     border-radius: 30px;
     max-width: 400px;
-    height: 300px;
+    max-height: 350px;
     box-shadow: -4px 4px 4px 0px #00000059;
-
+}
+.head_booking_count {
+    margin-bottom: 0px;
 }
 .head_booking_wnd_inputs {
     max-width: 310px;
@@ -158,6 +172,15 @@ select {
     padding: 6px;
     max-width: 110px;
     margin-bottom: 15px;
+}
+.head_booking_minus {
+    cursor: pointer;
+}
+.head_booking_plus {
+    cursor: pointer;
+}
+.input_value_counter p {
+    margin-bottom: 0;
 }
 .input_dates {
     display: flex;
@@ -330,6 +353,9 @@ h3 {
 footer {
     background: black;
     color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 .footer_body {
     display: flex;
@@ -437,6 +463,7 @@ footer {
     background: #CCECEB;
     border: 1px dashed #1BA39E;
     border-radius: 15px;
+    position: relative;
 }
 .personal_data {
     display: flex;
@@ -591,45 +618,125 @@ textarea[id="hobbies"]{
 
 
 
-/* Personal */
+/* Product */
 
 .personal_info_booking_header {
     margin-bottom: 50px;
+
 }
 .personal_info_booking {
     margin-bottom: 100px;
 }
 .personal_info_booking_unit {
-    max-width: 400px;
+    max-width: 300px;
 }
-.info_booking_header {
+.info_booking_header h1 {
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 29px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
 }
 .specifications_square p,
 .specifications_person p {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 22px;
+    margin: 0;
+    /*line-height: 29px;*/
+}
+.specifications_square img,
+.specifications_person img {
+    /*width: 100px;*/
+    /*height: 100px;*/
 }
 .info_booking_price h1,
 .info_booking_price p {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 0;
 }
 .info_booking_body {
     padding: 20px 25px 30px 25px;
     display: flex;
+    /*position: relative;*/
+    flex-direction: row;
+}
+.info_booking_add_info {
+    padding: 20px 25px 30px 25px;
+    position: absolute;
+    top: 0;
+    left: 297px;
+    height: 409px;
+    width: 250px;
+    border: 1px dashed #1BA39E;
+    border-left: none;
+    /*border-radius: 15px;*/
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    font-family: 'Montserrat';
+    font-style: normal;
+}
+.info_booking_main {
+    display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 300px;
+    z-index: 1;
+}
+.add_top_block_check {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.info_add_top_block,
+.info_add_bottom_block {
+    width: 95%;
+}
+.info_add_bottom_block {
+    margin-top: 30px;
+}
+.info_add_top_block h1 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.info_add_bottom_block h1 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.info_add_bottom_block ul {
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 20px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.info_add_bottom_block ul li {
+    color: #1BA39E;
+}
+.info_add_bottom_block ul li p {
+    color: #000;
+    margin-bottom: 0;
+}
+.checkbox_block label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+.checkbox_block span {
+    color: red;
 }
 .info_booking_specifications {
     display: flex;
@@ -649,14 +756,15 @@ textarea[id="hobbies"]{
 .info_booking_btn {
     cursor: pointer;
     border: none;
-    padding: 10px 50px;
+    padding: 10px 10px;
+    border-radius: 5px;
     color: white;
     background: #1BA39E;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 18px;
+    /*line-height: 27px;*/
 }
 
 
@@ -719,7 +827,6 @@ textarea[id="hobbies"]{
 
 .main-sec .promo-codes {
     margin-top: 20px;
-    margin-bottom: 10vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -733,6 +840,7 @@ textarea[id="hobbies"]{
 .main-sec .promo-codes .promo {
     margin-top: 20px;
     background: #F5F5F5;
+    margin-bottom: 150px;
     width: 32%;
     /*min-height: 605px;*/
     padding-bottom: 15px;
@@ -827,7 +935,16 @@ textarea[id="hobbies"]{
     flex-direction: column;
     gap: 50px;
 }
-
+.how_to_get_to_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*padding-bottom: 50px;*/
+}
+.how_to_get_to_us_maps {
+    display: flex !important;
+    gap: 50px;
+}
 
 /* Product */
 .filters .filters-title {
@@ -948,7 +1065,9 @@ textarea[id="hobbies"]{
     align-items: center;
     gap: 1vw;
 }
-
+.filters-more-fliters-price p {
+    margin-bottom: 0;
+}
 .filters .filters-more-fliters .filters-more-fliters-price .filters-more-fliters-price-inputs {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -957,7 +1076,18 @@ textarea[id="hobbies"]{
     -ms-flex-align: center;
     align-items: center;
 }
-
+.filters-more-fliters-sort .sort_btn {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    color: #FAF6F2;
+    background: #BB8C5F;
+    border: none;
+    padding: 13px 23px;
+}
 .filters .filters-more-fliters .filters-more-fliters-price .filters-more-fliters-price-inputs .input {
     padding: 8px 15px;
     font-family: 'Montserrat';
@@ -986,7 +1116,9 @@ textarea[id="hobbies"]{
     align-items: center;
     gap: 1vw;
 }
-
+.filters .filters-more-fliters .filters-more-fliters-type p {
+    margin-bottom: 0;
+}
 .filters .filters-more-fliters .filters-more-fliters-type select {
     padding: 12px 0 12px 15px;
     width: 186px;
@@ -1020,7 +1152,9 @@ textarea[id="hobbies"]{
     align-items: center;
     gap: 1vw;
 }
-
+.filters-more-fliters-only p {
+    margin-bottom: 0;
+}
 .filters .filters-more-fliters .filters-more-fliters-only .switch {
     position: relative;
     display: inline-block;
@@ -1032,7 +1166,7 @@ textarea[id="hobbies"]{
     display: none;
 }
 
-.filters .filters-more-fliters .filters-more-fliters-only .slider {
+.filters .filters-more-fliters .filters-more-fliters-only .catalog_switch {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -1044,7 +1178,7 @@ textarea[id="hobbies"]{
     transition: .4s;
 }
 
-.filters .filters-more-fliters .filters-more-fliters-only .slider:before {
+.filters .filters-more-fliters .filters-more-fliters-only .catalog_switch:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -1056,16 +1190,16 @@ textarea[id="hobbies"]{
     transition: .4s;
 }
 
-.filters .filters-more-fliters .filters-more-fliters-only input:checked + .slider {
+.filters .filters-more-fliters .filters-more-fliters-only input:checked + .catalog_switch {
     background-color: #BB8C5F;
 }
 
-.filters .filters-more-fliters .filters-more-fliters-only input:focus + .slider {
+.filters .filters-more-fliters .filters-more-fliters-only input:focus + .catalog_switch {
     -webkit-box-shadow: 0 0 1px #2196F3;
     box-shadow: 0 0 1px #2196F3;
 }
 
-.filters .filters-more-fliters .filters-more-fliters-only input:checked + .slider:before {
+.filters .filters-more-fliters .filters-more-fliters-only input:checked + .catalog_switch:before {
     -webkit-transform: translateX(26px);
     transform: translateX(26px);
 }
@@ -1079,7 +1213,9 @@ textarea[id="hobbies"]{
     align-items: center;
     gap: 1vw;
 }
-
+.filters-more-fliters-sort p {
+    margin-bottom: 0;
+}
 .filters .filters-more-fliters .filters-more-fliters-sort select {
     padding: 12px 0 12px 15px;
     width: 186px;
@@ -1307,7 +1443,6 @@ textarea[id="hobbies"]{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background: url(../Main_page/img/button-more.png) no-repeat;
     height: 70px;
     width: 280px;
     font-family: 'Jost';
@@ -1322,5 +1457,135 @@ textarea[id="hobbies"]{
 .filters-more-mobile {
     display: flex;
     align-items: center;
-    gap: ;
+}
+
+/* Slider */
+
+/* Слайдер */
+.slick-slider{
+    min-width: 0;
+}
+/* Ограничивающая оболочка */
+.slick-list {
+    overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track{
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Слайд */
+.slick-slide{}
+/* Слайд активный */
+.slick-slide.slick-active{}
+/* Слайд основной */
+.slick-slide.slick-current{}
+/* Слайд по центру */
+.slick-slide.slick-center{}
+
+/* Стрелка */
+.slick-arrow{}
+/* Стрелка влево */
+.slick-arrow.slick-prev{}
+/* Стрелка вправо */
+.slick-arrow.slick-next{}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+
+/* Точки */
+.slick-dots{
+}
+.slick-dots li{
+
+}
+.slick-dots button{
+    color: black;
+    background: black;
+}
+
+/* Конкретный слайдер */
+.slider {
+    position: relative;
+    padding: 0px 60px;
+
+}
+
+@media (max-width:767px){
+    .slider {
+        padding: 0px 40px;
+    }
+}
+
+.slider .slick-arrow{
+    position: absolute;
+    top: 50%;
+    margin: -30px 0px 0px 0px;
+    z-index: 10;
+    font-size: 0;
+    width: 30px;
+    height: 60px;
+}
+.slider .slick-arrow.slick-prev{
+    left: 0;
+    background: url('../img/arrow_left.png') 0 0 / 100% no-repeat;
+    border: none;
+}
+.slider .slick-arrow.slick-next{
+    right: 0;
+    background: url('../img/arrow_right.png') 0 0 / 100% no-repeat;
+    border: none;
+
+}
+.slider .slick-arrow.slick-disabled{
+    opacity: 0.2;
+}
+
+.slider .slick-dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider .slick-dots li{
+    list-style: none;
+    margin: 0px 10px;
+}
+.slider .slick-dots button{
+    border: #916d48 1px solid;
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #1BA39E;
+    border-radius: 50%;
+}
+
+.slider .slick-dots li.slick-active button{
+    background-color: transparent;
+    border: 1px solid #1BA39E;
+}
+
+.slider__item {
+    padding: 0px 15px;
+    display: flex;
+    justify-content: center;
+    width: 440px !important;
+}
+.slider__item img{
+    max-width: 100%;
+}
+.slider__item.slick-center{
+
+}
+.slider_body {
+    margin: 100px 0;
+}
+.slider_header h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 78px;
+    color: #000000;
+    margin-top: 50px;
+    margin-bottom: 70px;
 }

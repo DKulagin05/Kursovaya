@@ -23,7 +23,7 @@ if (!empty($_GET['phone']) and !empty($_GET['password'])) {
 </head>
 <body>
 <?php
-include_once 'header.php';
+include_once './parts/header.php';
 ?>
     <div class="registration_sec">
         <div class="wrapper">
@@ -96,7 +96,7 @@ include_once 'header.php';
         </div>
     </div>
 <?php
-require_once 'footer.php';
+require_once './parts/footer.php';
 ?>
 </body>
 </html>
