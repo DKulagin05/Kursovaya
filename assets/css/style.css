@@ -642,14 +642,17 @@ textarea[id="hobbies"]{
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 18px;
     margin: 0;
     /*line-height: 29px;*/
 }
-.specifications_square img,
+.specifications_square img {
+    width: 30px;
+    height: 30px;
+}
 .specifications_person img {
-    /*width: 100px;*/
-    /*height: 100px;*/
+    height: 30px;
+    width: 20px;
 }
 .info_booking_price h1,
 .info_booking_price p {
@@ -671,7 +674,7 @@ textarea[id="hobbies"]{
     position: absolute;
     top: 0;
     left: 297px;
-    height: 409px;
+    height: 398px;
     width: 250px;
     border: 1px dashed #1BA39E;
     border-left: none;

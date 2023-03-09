@@ -1,20 +1,4 @@
 <?php
-//// устанавливаем соединение с базой данных
-//$conn = mysqli_connect('localhost', 'username', 'password', 'database');
-//
-//// выполняем запрос к базе данных
-//$result = mysqli_query($conn, 'SELECT * FROM users');
-//
-//// получаем данные в виде ассоциативного массива
-//$data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-//
-//// закрываем соединение с базой данных
-//mysqli_close($conn);
-//
-//// возвращаем данные в формате JSON
-//echo json_encode($data);
-//?>
-<?php
 //Подключаемся к базе данных
 $dsn = 'mysql:host=localhost;dbname=Coursework';
 $username = 'root';

@@ -1,23 +1,15 @@
 <?php
-//Подключаемся к базе данных
-$dsn = 'mysql:host=localhost;dbname=Coursework';
-$username = 'root';
-$password = '';
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
-try {
-    $pdo = new PDO($dsn, $username, $password, $options);
-} catch (\PDOException $e) {
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+include_once 'Database.php';
+$conn = new Database();
+if (!$conn->getConnection()) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-
-// Выполняем запрос на получение данных из базы данных
-$stmt = $pdo->query('SELECT * FROM Rooms');
-$data = $stmt->fetchAll();
-
-// Выводим данные в формате JSON
+$sql = "SELECT * FROM Rooms";
+$result = mysqli_query($conn->getConnection(), $sql);
+$data = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $data[] = $row;
+}
 header('Content-Type: application/json');
 echo json_encode($data);
+mysqli_close($conn->getConnection());

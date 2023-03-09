@@ -144,7 +144,7 @@ fetch('/assets/api/ProductData.php')
                 <div class="info_booking_add_info hide">
                     <div class="info_booking_add_block">
                         <div class="info_add_top_block">
-                            <h1>Подключаемые услуги</h1>
+                            <h1>Дополнительные услуги</h1>
                             <div class="add_top_block_check">
                                 <div class="checkbox_block">
                                     <input type="checkbox" name="breakfast" id="breakfast">

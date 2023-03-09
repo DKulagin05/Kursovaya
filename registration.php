@@ -1,15 +1,5 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "",'Coursework');
-if (!empty($_GET['phone']) and !empty($_GET['password'])) {
-    $name = $_GET['name'];
-    $surname = $_GET['surname'];
-    $patronymic = $_GET['patronymic'];
-    $email = $_GET['email'];
-    $phone = $_GET['phone'];
-    $password = $_GET['password'];
-    $password_repeat = $_GET['password_repeat'];
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,6 +9,7 @@ if (!empty($_GET['phone']) and !empty($_GET['password'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="assets/js/registration.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -62,23 +53,6 @@ include_once './parts/header.php';
                             <input type="password" name="password_repeat" id="password_repeat" required>
                         </div>
                     </div>
-                    <?php
-                    if ($_GET['password'] === $_GET['password_repeat']) {
-                        $check_query = "SELECT * FROM Users WHERE email = '$email'";
-                        $result = mysqli_query($conn, $check_query);
-                        if (mysqli_num_rows($result) > 0) {
-                            echo 'Пользователь с таким номером или почтой уже существует';
-                        } else {
-                            $query = "INSERT INTO Users(name,surname,patronymic,phone,email,password) VALUES ('$name','$surname','$patronymic','$phone','$email','$password')";
-                            mysqli_query($conn, $query);
-                            $_SESSION['auth'] = true;
-                            header("Location: /personal_account.php");
-                            echo 'Успешная регистрация';
-                            $id = mysqli_insert_id($conn);
-                            $_SESSION['id'] = $id;
-                        };
-                    }
-                    ?>
                     <div class="reg_input_box">
                         <input type="submit" value="Зарегистрироваться">
                         <div class="approval_box">
