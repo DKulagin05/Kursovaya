@@ -27,7 +27,7 @@ fetch('/assets/api/ProductData.php')
                             <h1>Цена</h1>
                             <p>${item.price} р</p>
                         </div>
-                        <div class="info_booking_btn">Забронировать</div>
+                        <div class="info_booking_btn data-id="${item.id}">Забронировать</div>
                     </div>
                 </div>
                 <div class="info_booking_add_info hide">
@@ -85,6 +85,23 @@ fetch('/assets/api/ProductData.php')
             product_img.onmouseleave = () => {
                 info_booking_add_info.classList.add('hide');
             };
+
         }
     })
     .catch(error => console.log(error));
+
+const buttons = document.querySelectorAll('.info_booking_btn');
+for (const button of buttons) {
+    button.addEventListener('click', () => {
+        const id = button.getAttribute('data-id');
+        console.log(id)
+        // fetch('/path/to/api/Booking')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //     });
+    });
+}
