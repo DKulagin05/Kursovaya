@@ -65,108 +65,120 @@ session_start();
         <div class="slider">
             <div class="slider__item filter">
                 <div class="personal_info_booking_unit">
-                    <img src="assets/img/rent_ico.png" alt="#">
+
+                    <img class="product_img" src="/assets/img/rent_ico.png" alt="#">
                     <div class="info_booking_body">
-                        <div class="info_booking_header">
-                            <h1>Стандарт с односпальной кроватью</h1>
-                        </div>
-                        <div class="info_booking_specifications">
-                            <div class="specifications_square">
-                                <img src="assets/img/square.png" alt="#">
-                                <p>16 кв.м</p>
+                        <div class="info_booking_main">
+                            <div class="info_booking_header">
+                                <h1>Двуспальный номер с доп. услугами</h1>
                             </div>
-                            <div class="specifications_person">
-                                <img src="assets/img/person.png" alt="#">
-                                <p>1 чел.</p>
+                            <div class="info_booking_specifications">
+                                <div class="specifications_square">
+                                    <img src="/assets/img/square.png" alt="#">
+                                    <p>16 кв. м</p>
+                                </div>
+                                <div class="specifications_person">
+                                    <img src="/assets/img/person.png" alt="#">
+                                    <p>2 чел.</p>
+                                </div>
+                            </div>
+                            <div class="info_booking_price_btn">
+                                <div class="info_booking_price">
+                                    <h1>Цена</h1>
+                                    <p>2500 р</p>
+                                </div>
+                                <div class="info_booking_btn">Забронировать</div>
                             </div>
                         </div>
-                        <div class="info_booking_price_btn">
-                            <div class="info_booking_price">
-                                <h1>Цена</h1>
-                                <p>2.300р</p>
-                            </div>
-                            <div class="info_booking_btn">Забронировать</div>
-                        </div>
+
                     </div>
                 </div>
             </div>
             <div class="slider__item">
                 <div class="personal_info_booking_unit">
-                    <img src="assets/img/rent_ico.png" alt="#">
+
+                    <img class="product_img" src="/assets/img/rent_ico.png" alt="#">
                     <div class="info_booking_body">
-                        <div class="info_booking_header">
-                            <h1>Стандарт с односпальной кроватью</h1>
-                        </div>
-                        <div class="info_booking_specifications">
-                            <div class="specifications_square">
-                                <img src="assets/img/square.png" alt="#">
-                                <p>16 кв.м</p>
+                        <div class="info_booking_main">
+                            <div class="info_booking_header">
+                                <h1>Двуспальный номер с доп. услугами</h1>
                             </div>
-                            <div class="specifications_person">
-                                <img src="assets/img/person.png" alt="#">
-                                <p>1 чел.</p>
+                            <div class="info_booking_specifications">
+                                <div class="specifications_square">
+                                    <img src="/assets/img/square.png" alt="#">
+                                    <p>16 кв. м</p>
+                                </div>
+                                <div class="specifications_person">
+                                    <img src="/assets/img/person.png" alt="#">
+                                    <p>2 чел.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="info_booking_price_btn">
-                            <div class="info_booking_price">
-                                <h1>Цена</h1>
-                                <p>2.300р</p>
+                            <div class="info_booking_price_btn">
+                                <div class="info_booking_price">
+                                    <h1>Цена</h1>
+                                    <p>2500 р</p>
+                                </div>
+                                <div class="info_booking_btn">Забронировать</div>
                             </div>
-                            <div class="info_booking_btn">Забронировать</div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="slider__item filter">
                 <div class="personal_info_booking_unit">
-                    <img src="assets/img/rent_ico.png" alt="#">
+                    <img class="product_img" src="/assets/img/rent_ico.png" alt="#">
                     <div class="info_booking_body">
-                        <div class="info_booking_header">
-                            <h1>Стандарт с односпальной кроватью</h1>
-                        </div>
-                        <div class="info_booking_specifications">
-                            <div class="specifications_square">
-                                <img src="assets/img/square.png" alt="#">
-                                <p>16 кв.м</p>
+                        <div class="info_booking_main">
+                            <div class="info_booking_header">
+                                <h1>Двуспальный номер с доп. услугами</h1>
                             </div>
-                            <div class="specifications_person">
-                                <img src="assets/img/person.png" alt="#">
-                                <p>1 чел.</p>
+                            <div class="info_booking_specifications">
+                                <div class="specifications_square">
+                                    <img src="/assets/img/square.png" alt="#">
+                                    <p>16 кв. м</p>
+                                </div>
+                                <div class="specifications_person">
+                                    <img src="/assets/img/person.png" alt="#">
+                                    <p>2 чел.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="info_booking_price_btn">
-                            <div class="info_booking_price">
-                                <h1>Цена</h1>
-                                <p>2.300р</p>
+                            <div class="info_booking_price_btn">
+                                <div class="info_booking_price">
+                                    <h1>Цена</h1>
+                                    <p>2500 р</p>
+                                </div>
+                                <div class="info_booking_btn">Забронировать</div>
                             </div>
-                            <div class="info_booking_btn">Забронировать</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="slider__item">
                 <div class="personal_info_booking_unit">
-                    <img src="assets/img/rent_ico.png" alt="#">
+                    <img class="product_img" src="/assets/img/rent_ico.png" alt="#">
                     <div class="info_booking_body">
-                        <div class="info_booking_header">
-                            <h1>Стандарт с односпальной кроватью</h1>
-                        </div>
-                        <div class="info_booking_specifications">
-                            <div class="specifications_square">
-                                <img src="assets/img/square.png" alt="#">
-                                <p>16 кв.м</p>
+                        <div class="info_booking_main">
+                            <div class="info_booking_header">
+                                <h1>Двуспальный номер с доп. услугами</h1>
                             </div>
-                            <div class="specifications_person">
-                                <img src="assets/img/person.png" alt="#">
-                                <p>1 чел.</p>
+                            <div class="info_booking_specifications">
+                                <div class="specifications_square">
+                                    <img src="/assets/img/square.png" alt="#">
+                                    <p>16 кв. м</p>
+                                </div>
+                                <div class="specifications_person">
+                                    <img src="/assets/img/person.png" alt="#">
+                                    <p>2 чел.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="info_booking_price_btn">
-                            <div class="info_booking_price">
-                                <h1>Цена</h1>
-                                <p>2.300р</p>
+                            <div class="info_booking_price_btn">
+                                <div class="info_booking_price">
+                                    <h1>Цена</h1>
+                                    <p>2500 р</p>
+                                </div>
+                                <div class="info_booking_btn">Забронировать</div>
                             </div>
-                            <div class="info_booking_btn">Забронировать</div>
                         </div>
                     </div>
                 </div>

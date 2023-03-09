@@ -15,10 +15,8 @@ loginForm.addEventListener('submit', (e) => {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             if (data.success) {
                 window.location.href = '../personal_account.php';
-                console.log(123)
             } else {
                 alert(data.message);
             }

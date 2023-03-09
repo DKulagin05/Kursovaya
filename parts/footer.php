@@ -1,9 +1,12 @@
 <footer>
+    <script src="/assets/js/footer.js" defer></script>
     <div class="wrapper">
         <div class="footer_body">
             <div class="footer_input">
-                <input type="text" placeholder="Подписаться на рассылку">
-                <input type="submit" value="Подписаться">
+                <form action="" id="mailingForm">
+                    <input name="mailing" id="mailing" type="email" placeholder="Подписаться на рассылку">
+                    <input type="submit" value="Подписаться">
+                </form>
             </div>
             <div class="footer_links">
                 <a href="../contacts.php">Контакты</a>

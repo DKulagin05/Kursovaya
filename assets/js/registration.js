@@ -27,7 +27,6 @@ form.addEventListener("submit", (event) => {
     })
         .then((response) => response.json()) // парсим ответ от сервера в формате JSON
         .then((data) => {
-            // проверяем статус ответа от сервера
             if (data.status) {
                 window.location.href = "../personal_account.php"; // переходим на страницу личного кабинета
             } else {
