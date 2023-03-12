@@ -19,12 +19,18 @@ if (mysqli_num_rows($result) > 0) {
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/personal_account.css">
     <script src="assets/js/PersonalPage.js" defer></script>
+    <script src="assets/js/PersonalData.js" defer></script>
     <title>Document</title>
 </head>
 <body>
 <?php
 include_once './parts/header.php';
 ?>
+<?php
+session_start();
+$id = $_SESSION['id'];
+?>
+<input type="hidden" id="user_id" value="<?=$id?>">
 <div class="personal_info">
     <div class="wrapper">
         <div class="personal_info_header">
@@ -34,20 +40,7 @@ include_once './parts/header.php';
         <div class="personal_info_body">
             <div class="personal_img"><img src="./assets/img/profile.jpg" alt="Profile_Img"></div>
             <div class="personal_data">
-                <div class="personal_data_fn">
-                    <div class="personal_surname"><?=$user['surname']?></div>
-                    <div class="personal_name"><?=$user['name']?></div>
-                    <div class="personal_patronymic"><?=$user['patronymic']?></div>
-                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>
-                </div>
-                <div class="personal_data_phone">
-                    <div class="personal_phone"><?=$user['phone']?></div>
-                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>
-                </div>
-                <div class="personal_data_mail">
-                    <div class="personal_mail"><?=$user['email']?></div>
-                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>
-                </div>
+
             </div>
         </div>
     </div>

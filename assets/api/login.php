@@ -1,9 +1,9 @@
 <?php
+session_start();
 // получаем данные из массива $_POST
 $username = $_POST['username'];
 $password = $_POST['password'];
 $test = json_encode( $_POST['username']);
-echo $test;
 
 // выполняем проверку данных и формируем массив с результатами
 $result = array(

@@ -13,6 +13,13 @@
 <?php
 include_once './parts/header.php';
 ?>
+
+<?php
+session_start();
+$id = $_SESSION['id'];
+?>
+
+<input type="hidden" id="user_id" value="<?=$id?>">
     <section class="filters">
         <div class="wrapper">
             <div class="filters-title">

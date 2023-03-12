@@ -1,24 +1,8 @@
-//
-// fetch('./assets/api/personalPage.php', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//
-//     })
-// })
-//     .then(response => response.json())
-//     .then(data => {
-//         if (data.success) {
-//             window.location.href = '../personal_account.php';
-//         } else {
-//             alert(data.message);
-//         }
-//     }).catch(error => console.error(error));
-
-
-fetch('/assets/api/personalPage.php')
+fetch('/assets/api/personalBookingInfo.php')
     .then(response => response.json())
     .then(data => {
         for (let item of data) {
+            let item_id = item.id;
             let products_list = document.querySelector('.products-list');
             let product = document.createElement('div');
             product.className = 'personal_info_booking_unit';
@@ -53,30 +37,53 @@ fetch('/assets/api/personalPage.php')
                             <h1>Дополнительные услуги</h1>
                             <div class="add_top_block_check">
                                 <div class="checkbox_block">
-                                    <input type="checkbox" name="breakfast" id="breakfast">
+                                    <input type="checkbox" name="breakfast" id="breakfast" disabled checked>
                                     <label for="breakfast">Завтрак</label>
                                 </div>
                                 <div class="checkbox_block">
-                                    <input type="checkbox" name="dinner" id="dinner">
+                                    <input type="checkbox" name="dinner" id="dinner" disabled>
                                     <label for="dinner">Ужин</label>
                                 </div>
                                 <div class="checkbox_block">
-                                    <input type="checkbox" name="spa" id="spa">
+                                    <input type="checkbox" name="spa" id="spa" disabled>
                                     <label for="spa">СПА</label>
                                 </div>
                                 <div class="checkbox_block">
-                                    <input type="checkbox" name="transport" id="transport">
+                                    <input type="checkbox" name="transport" id="transport" disabled>
                                     <label for="transport">Транспорт<span>*</span></label>
                                 </div>
                             </div>
                         </div>
                         <div class="info_add_bottom_block">
                             <h1>Этот номер включает в себя</h1>
-                            <ul>
-                                <li><p>TV</p></li>
-                                <li><p>Wi-Fi</p></li>
-                                <li><p>Кондиционер</p></li>
-                                <li><p>Мини-бар</p></li>
+                            <ul class="product_add_info_block">
+                               ${fetch("./assets/api/ProductDataAdd.php", {
+                method: "POST",
+                body: JSON.stringify({
+                    item_id
+                }),
+            })
+                .then((response) => response.json()) // парсим ответ от сервера в формате JSON
+                .then((product_add_info) => {
+                    let product_add_info_block = product.querySelector('.product_add_info_block');
+                    let htmlStrings = [];
+                    for (let add_info of product_add_info) {
+                        if (add_info.TV == 1) {
+                            htmlStrings.push('<li><p>TV</p></li>');
+                        }
+                        if (add_info.Minibar == 1) {
+                            htmlStrings.push('<li><p>Мини-бар</p></li>');
+                        }
+                        if (add_info.WiFi == 1) {
+                            htmlStrings.push('<li><p>Wi-Fi</p></li>');
+                        }
+                        if (add_info.Сonditioner == 1) {
+                            htmlStrings.push('<li><p>Кондиционер</p></li>');
+                        }
+                    }
+                    product_add_info_block.innerHTML = htmlStrings.join('');
+
+                })}
                             </ul>
                         </div>
                     </div>
@@ -104,6 +111,29 @@ fetch('/assets/api/personalPage.php')
             product_img.onmouseleave = () => {
                 info_booking_add_info.classList.add('hide');
             };
+
+            product.querySelector('.info_booking_btn').addEventListener('click', () => {
+                if (confirm('Вы уверены что хотите отменить бронирование?')) {
+                    let item_booking = item;
+                    const userId = document.getElementById("user_id").value;
+                    fetch('./assets/api/cancelBooking.php', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            item_booking,
+                            userId
+                        })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if(data.success) {
+                                alert(data.message);
+                                location.reload();
+                            } else {
+                                alert(data.message);
+                            }
+                        });
+                }
+            });
         }
     })
     .catch(error => console.log(error));

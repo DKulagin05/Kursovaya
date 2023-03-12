@@ -35,30 +35,7 @@ session_start();
                         <input type="password" name="password" id="password" required>
                     </div>
                 </div>
-                <?php
-//                if (isset($_GET['email'])) {
-//                    $email = $_GET['email'];
-//                    $password = $_GET['password'];
-//
-//                    $check_query = "SELECT * FROM Users WHERE email = '$email' or phone = '$email'";
-//                    $result = mysqli_query($conn, $check_query);
-//
-//                    if (mysqli_num_rows($result) > 0) {
-//                        $user = mysqli_fetch_assoc($result);
-////                        var_dump($user['password']);
-//                        if ($password === $user['password']) {
-//                            $_SESSION['auth'] = true;
-//                            $_SESSION['id'] = $user['id'];
-//                            header("Location: ./personal_account.php");
-//                        } else {
-//                            echo 'Неверный пароль';
-//                        }
-//                    } else {
-//                        echo 'Пользователь с такой почтой не найден';
-//                    }
-//                }
-                ?>
-<!--                <button class="login_submit">Войти</button>-->
+                <!--                <button class="login_submit">Войти</button>-->
                 <input class="login_submit" value="Войти" type="submit">
                 <div class="registration_var">
                     <p>Нет аккаунта?</p>
