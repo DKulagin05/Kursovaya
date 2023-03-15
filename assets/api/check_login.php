@@ -14,7 +14,7 @@ if(isset($entityBody['email']) && isset($entityBody['password'])) {
         if ($password === $user['password']) {
             $_SESSION['auth'] = true;
             $_SESSION['id'] = $user['id'];
-            echo json_encode(['success' => true, 'redirect' => './personal_account.php']);
+            echo json_encode(['success' => true, 'message' => 'Успешная авторизация' , 'admin' => $user['admin']]);
         } else {
             echo json_encode(['success' => false, 'message' => 'Неверный пароль']);
         }

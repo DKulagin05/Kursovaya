@@ -40,8 +40,6 @@ session_start();
                 <div class="registration_var">
                     <p>Нет аккаунта?</p>
                     <a href="./registration.php">Зарегистрируйтесь</a>
-                    <a href="./assets/api/login.php">Ссылка на говно</a>
-
                 </div>
             </form>
         </div>

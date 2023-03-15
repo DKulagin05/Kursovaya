@@ -97,7 +97,7 @@ fetch('/assets/api/ProductData.php')
                 let product_img = product.querySelector('.product_img')
                 let info_booking_body = product.querySelector('.info_booking_body');
                 let info_booking_add_info = product.querySelector('.info_booking_add_info');
-                let info_booking_add_img = product.querySelector('.info_booking_add_img')
+                // let info_booking_add_img = product.querySelector('.info_booking_add_img')
                 info_booking_body.onmouseenter = () => {
                     info_booking_add_info.classList.remove('hide');
                     info_booking_add_info.style.cssText = 'z-index: 2; background: #CCECEB;';

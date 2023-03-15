@@ -12,7 +12,6 @@ form.addEventListener("submit", (event) => {
     const password_repeat = document.getElementById('password_repeat').value;
 
 
-    // отправляем POST-запрос на сервер
     fetch("./assets/api/registration.php", {
         method: "POST",
         body: JSON.stringify({

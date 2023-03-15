@@ -16,7 +16,11 @@ loginForm.addEventListener('submit', (e) => {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = '../personal_account.php';
+                if (data.admin == 0) {
+                    window.location.href = '../personal_account.php';
+                } else {
+                    window.location.href = '../adminPage.php';
+                }
             } else {
                 alert(data.message);
             }
