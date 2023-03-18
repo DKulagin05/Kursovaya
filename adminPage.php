@@ -33,6 +33,8 @@
     <input id="create_square" type="text" value="">
     <label for="create_price">Цена</label>
     <input id="create_price" type="text" value="">
+    <label for="create_img">Изображение</label>
+    <input id="create_img" type="text" value="">
     <button class="create_room_btn">Сохранить изменения</button>
 </div>
 <form action="">

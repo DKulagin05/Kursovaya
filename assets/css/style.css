@@ -354,7 +354,7 @@ footer {
     background: black;
     color: white;
     position: absolute;
-    bottom: 0;
+    bottom: -100px;
     width: 100%;
 }
 .footer_body {
@@ -645,6 +645,12 @@ textarea[id="hobbies"]{
     font-size: 18px;
     margin: 0;
     /*line-height: 29px;*/
+}
+.product_img {
+    height: 190px;
+    width: 100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 .specifications_square img {
     width: 30px;
@@ -1046,7 +1052,8 @@ textarea[id="hobbies"]{
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    gap: 50px;
     margin-bottom: 2vh;
     align-items: center;
 }
@@ -1104,7 +1111,7 @@ textarea[id="hobbies"]{
     width: 83px;
 }
 
-.filters .filters-more-fliters .filters-more-fliters-price .filters-more-fliters-price-inputs .palocka {
+.filters .filters-more-fliters .filters-more-fliters-price .filters-more-fliters-price-inputs .line_filters {
     background: #636B78;
     height: 1px;
     width: 14px;
@@ -1256,8 +1263,8 @@ textarea[id="hobbies"]{
     flex-wrap: wrap;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    gap: 1vw;
+    /*justify-content: space-between;*/
+    gap: 3.5vw;
 }
 
 .first-sec .products-list .product {

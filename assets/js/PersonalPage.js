@@ -7,7 +7,7 @@ fetch('/assets/api/personalBookingInfo.php')
             let product = document.createElement('div');
             product.className = 'personal_info_booking_unit';
             product.innerHTML = `
-            <img class="product_img" src="/assets/img/rent_ico.png" alt="#">
+            <img class="product_img" src="/assets/img/rent_img/rent_ico.png" alt="#">
             <div class="info_booking_body">
                 <div class="info_booking_main">
                     <div class="info_booking_header">

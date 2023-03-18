@@ -13,15 +13,18 @@ fetch('/assets/api/personalData.php',{
                     <div class="personal_surname">${data[0].surname}</div>
                     <div class="personal_name">${data[0].name}</div>
                     <div class="personal_patronymic">${data[0].patronymic}</div>
-                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>
+<!--                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>-->
                 </div>
                 <div class="personal_data_phone">
                     <div class="personal_phone">${data[0].phone}</div>
-                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>
+<!--                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>-->
                 </div>
                 <div class="personal_data_mail">
                     <div class="personal_mail">${data[0].email}</div>
-                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>
+<!--                    <div class="personal_editing_btn"><img src="assets/img/editing.png" alt="#"></div>-->
+                </div>
+                <div class="admin_box">
+                    <a href="./adminPage.php" class="admin_panel_btn">Админ панель</a>
                 </div>
         `
     })

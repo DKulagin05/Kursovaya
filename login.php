@@ -35,7 +35,6 @@ session_start();
                         <input type="password" name="password" id="password" required>
                     </div>
                 </div>
-                <!--                <button class="login_submit">Войти</button>-->
                 <input class="login_submit" value="Войти" type="submit">
                 <div class="registration_var">
                     <p>Нет аккаунта?</p>
@@ -45,8 +44,8 @@ session_start();
         </div>
     </div>
 </div>
-<?php
-require_once './parts/footer.php';
-?>
+    <?php
+    require_once './parts/footer.php';
+    ?>
 </body>
 </html>

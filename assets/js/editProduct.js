@@ -28,6 +28,7 @@ form[0].addEventListener('submit', (e) => {
                         <th>people_count</th>
                         <th>square</th>
                         <th>price</th>
+                        <th>img</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +39,7 @@ form[0].addEventListener('submit', (e) => {
                         <td>${room.people_count}</td>
                         <td>${room.square}</td>
                         <td>${room.price}</td>
+                        <td>${room.img}</td>
                         <td><button class="redact_product">Редактировать</button></td>
                     </tr>
                     <tr class="redact_product_inputs hide">
@@ -47,6 +49,7 @@ form[0].addEventListener('submit', (e) => {
                         <td><input id="new_people_count" type="text" value="${room.people_count}"></td>
                         <td><input id="new_square" type="text" value="${room.square}"></td>
                         <td><input id="new_price" type="text" value="${room.price}"></td>
+                        <td><input id="new_img" type="text" value="${room.img}"></td>
                         <td><button class="save_changes">Сохранить изменения</button></td>
                         
                     </tr>
@@ -68,6 +71,7 @@ form[0].addEventListener('submit', (e) => {
                     const new_people_count = document.getElementById('new_people_count').value;
                     const new_square = document.getElementById('new_square').value;
                     const new_price = document.getElementById('new_price').value;
+                    const new_img = document.getElementById('new_img').value;
                     fetch("./assets/api/editProduct.php", {
                         method: "POST",
                         body: JSON.stringify({
@@ -76,7 +80,8 @@ form[0].addEventListener('submit', (e) => {
                             new_description,
                             new_people_count,
                             new_square,
-                            new_price
+                            new_price,
+                            new_img
                         }),
                     })
                         .then((response) => response.json())
@@ -116,6 +121,7 @@ document.querySelector('.create_room_btn').addEventListener('click',(event) => {
     const create_people_count = document.getElementById('create_people_count').value;
     const create_square = document.getElementById('create_square').value;
     const create_price = document.getElementById('create_price').value;
+    const create_img = document.getElementById('create_img').value;
     fetch("./assets/api/createProduct.php", {
         method: "POST",
         body: JSON.stringify({
@@ -123,7 +129,8 @@ document.querySelector('.create_room_btn').addEventListener('click',(event) => {
             create_description,
             create_people_count,
             create_square,
-            create_price
+            create_price,
+            create_img
         }),
     })
         .then((response) => response.json())

@@ -25,63 +25,59 @@ $id = $_SESSION['id'];
             <div class="filters-title">
                 <div class="filters-title-text">Каталог</div>
                 <div class="filters-title-filters">
-                    <div class="products-selects">
-                        <div class="type">
-                            <input type="radio" name="switch" id="search_1" checked>
-                            <input type="radio" name="switch" id="search_2">
-                            <input type="radio" name="switch" id="search_3">
-                            <input type="radio" name="switch" id="search_4">
-                        
-                            <div class="searches">
-                                <label for="search_1">Обычные номера</label>
-                                <label for="search_2">Люкс номера</label>
-                                <label for="search_3">Спец. номера</label>
-<!--                                <label for="search_4">Расходники</label>-->
-                            </div>
-                        </div>
-                    </div>  
+<!--                    <div class="products-selects">-->
+<!--                        <div class="type">-->
+<!--                            <input type="radio" name="switch" id="search_1" checked>-->
+<!--                            <input type="radio" name="switch" id="search_2">-->
+<!--                            <input type="radio" name="switch" id="search_3">-->
+<!--                        -->
+<!--                            <div class="searches">-->
+<!--                                <label for="search_1">Обычные номера</label>-->
+<!--                                <label for="search_2">Люкс номера</label>-->
+<!--                                <label for="search_3">Спец. номера</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>  -->
                 </div>
             </div>
-            <div class="filters-more-fliters">
+            <form class="filters-more-fliters">
                 <div class="filters-more-fliters-price">
                     <p>Цена</p>
                     <div class="filters-more-fliters-price-inputs">
-                        <input class="input" type="text" placeholder="От">
-                        <div class="palocka"></div>
-                        <input class="input" type="text" placeholder="До">
+                        <input class="input" id="search_price_start" type="text" placeholder="От" value="0">
+                        <div class="line_filters"></div>
+                        <input class="input" id="search_price_end" type="text" placeholder="До">
                     </div>
                     
                 </div>
-                <div class="filters-more-fliters-type">
-                    <p>Тип номера</p>
-                    <select name="filters-more-fliters-type">
-                        <option value="1">Односпальный</option>
-                        <option value="2">Двуспальный</option>
-                        <option value="3">Две односпальные</option>
-                        <option value="4">Две двуспальные</option>
-<!--                        <option value="5">В макете нет примера</option>-->
-<!--                        <option value="6">Просто прекрасно</option>-->
-                    </select>
-                </div>
-                <div class="filters-more-fliters-only">
-                    <p>Только доступные сейчас</p>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="catalog_switch"></span>
-                    </label>
-                </div>
+<!--                <div class="filters-more-fliters-type">-->
+<!--                    <p>Тип номера</p>-->
+<!--                    <select name="filters-more-fliters-type">-->
+<!--                        <option value="1">Односпальный</option>-->
+<!--                        <option value="2">Двуспальный</option>-->
+<!--                        <option value="3">Две односпальные</option>-->
+<!--                        <option value="4">Две двуспальные</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--                <div class="filters-more-fliters-only">-->
+<!--                    <p>Только доступные сейчас</p>-->
+<!--                    <label class="switch">-->
+<!--                        <input type="checkbox" checked>-->
+<!--                        <span class="catalog_switch"></span>-->
+<!--                    </label>-->
+<!--                </div>-->
                 <div class="filters-more-fliters-sort">
                     <p>Сортировка</p>
                     <select name="filters-more-fliters-sort">
-                        <option value="1">Популярные</option>
-                        <option value="3">Дешёвые</option>
-                        <option value="4">Дорогие</option>
+<!--                        <option value="0" disabled >Выбрать</option>-->
+                        <option value="0" selected>Дешёвые</option>
+                        <option value="1">Дорогие</option>
                     </select>
                 </div>
                 <div class="filters-more-fliters-sort">
-                    <button class="sort_btn">Отсортировать</button>
+                    <input type="submit" class="sort_btn" id="sort_all_btn" value="Отсортировать">
                 </div>
-            </div>
+            </form>
 <!--            <div class="filters-more-mobile">-->
 <!--                <img src="assets/img/filter-img.png" alt="">-->
 <!--                <h1>Фильтр</h1>-->
@@ -94,7 +90,7 @@ $id = $_SESSION['id'];
 
             </div>
             <div class="product-list-button">
-                <div class="product-list-button-more" onclick="add_products()">Показать ещё</div>
+<!--                <div class="product-list-button-more" onclick="add_products()">Показать ещё</div>-->
             </div>
         </div>
     </section>
