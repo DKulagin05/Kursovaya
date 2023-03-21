@@ -38,10 +38,10 @@ $id = $_SESSION['id'];
             <div class="sale_header_border"></div>
         </div>
         <div class="personal_info_body">
-            <div class="personal_img"><img src="./assets/img/profile.jpg" alt="Profile_Img"></div>
-            <div class="personal_data">
-
-            </div>
+<!--            <div class="personal_img"><img src="./assets/img/profile.jpg" alt="Profile_Img"></div>-->
+<!--            <div class="personal_data">-->
+<!---->
+<!--            </div>-->
         </div>
     </div>
 </div>

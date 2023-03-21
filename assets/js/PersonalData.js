@@ -7,8 +7,10 @@ fetch('/assets/api/personalData.php',{
 })
     .then(response => response.json())
     .then(data => {
-        let personal_data_block = document.querySelector('.personal_data');
+        let personal_data_block = document.querySelector('.personal_info_body');
         personal_data_block.innerHTML = `
+            <div class="personal_img"><img style="width: 300px; height:300px;" src="./assets/img/profile_pictures/${data[0].img}" alt="Profile_Img"></div>
+            <div class="personal_data">
                 <div class="personal_data_fn">
                     <div class="personal_surname">${data[0].surname}</div>
                     <div class="personal_name">${data[0].name}</div>
@@ -46,27 +48,28 @@ fetch('/assets/api/personalData.php',{
                         <input type="file" value="" name="edit_profile_img" id="edit_profile_img">  
                     </div>
                     <input type="submit" class="save_changes">
-                </form>
+                </form> 
+            </div>
         `
         document.querySelector('.edit_profile_btn').addEventListener('click',()=>{
             document.querySelector('.edit_personal_data').classList.toggle('hide')
         })
-        let form = document.querySelectorAll('form')
+        let form = document.querySelector('form')
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            let save_changes = product.querySelector('.save_changes')
-
-            save_changes.addEventListener("click", (event) => {
-                event.preventDefault();
                 const input_edit_photo = document.querySelector('input[type="file"]')
                 let edit_data = new FormData()
-                edit_data.append('edit_img', input_edit_photo.files[0])
-                edit_data.append('id', data.id)
-                edit_data.append('new_name', document.getElementById('new_title').value)
-                edit_data.append('new_surname', document.getElementById('new_description').value)
-                edit_data.append('new_patronymic', document.getElementById('new_people_count').value)
-                edit_data.append('new_phone', document.getElementById('new_square').value)
-                edit_data.append('new_mail', document.getElementById('new_price').value)
+                edit_data.append('id', data[0].id)
+                if (!input_edit_photo.files[0]) {
+                    edit_data.append('edit_img', '')
+                } else {
+                    edit_data.append('edit_img', input_edit_photo.files[0])
+                }
+                edit_data.append('new_name', document.getElementById('edit_name').value)
+                edit_data.append('new_surname', document.getElementById('edit_surname').value)
+                edit_data.append('new_patronymic', document.getElementById('edit_patronymic').value)
+                edit_data.append('new_phone', document.getElementById('edit_phone').value)
+                edit_data.append('new_mail', document.getElementById('edit_mail').value)
                 fetch("./assets/api/editPersonalData.php", {
                     method: "POST",
                     body: edit_data,
@@ -81,7 +84,6 @@ fetch('/assets/api/personalData.php',{
                         }
                     })
                     .catch((error) => console.error(error));
-            })
         })
     })
     .catch(error => console.log(error));

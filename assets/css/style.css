@@ -629,6 +629,7 @@ textarea[id="hobbies"]{
 }
 .personal_info_booking_unit {
     max-width: 300px;
+    height: 500px;
 }
 .info_booking_header h1 {
     font-family: 'Montserrat';
