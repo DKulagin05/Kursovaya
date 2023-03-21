@@ -54,6 +54,18 @@ fetch('./assets/api/services.php', {
                         </div>
                     </div>
                 </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingFifth">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFifth" aria-expanded="true" aria-controls="panelsStayOpen-collapseFifth">
+                            ${data[4].title}
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseFifth" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFifth">
+                        <div class="accordion-body">
+                            ${data[4].description}
+                        </div>
+                    </div>
+                </div>
         `
         console.log(data)
     })

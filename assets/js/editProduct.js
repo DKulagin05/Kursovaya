@@ -49,7 +49,7 @@ form[0].addEventListener('submit', (e) => {
                         <td><input id="new_people_count" type="text" value="${room.people_count}"></td>
                         <td><input id="new_square" type="text" value="${room.square}"></td>
                         <td><input id="new_price" type="text" value="${room.price}"></td>
-                        <td><input id="new_img" type="text" value="${room.img}"></td>
+                        <td><input id="new_img" type="file" value="${room.img}"></td>
                         <td><button class="save_changes">Сохранить изменения</button></td>
                         
                     </tr>
@@ -64,7 +64,14 @@ form[0].addEventListener('submit', (e) => {
 
                 save_changes.addEventListener("click", (event) => {
                     event.preventDefault();
-
+                    const input_create_photo = document.querySelector('input[type="file"]')
+                    let create_data = new FormData()
+                    create_data.append('create_img', input_photo.files[0])
+                    create_data.append('create_title', document.getElementById('create_title').value)
+                    create_data.append('create_description', document.getElementById('create_description').value)
+                    create_data.append('create_people_count', document.getElementById('create_people_count').value)
+                    create_data.append('create_square', document.getElementById('create_square').value)
+                    create_data.append('create_price', document.getElementById('create_price').value)
                     const id = document.getElementById('old_id').value;
                     const new_title = document.getElementById('new_title').value;
                     const new_description = document.getElementById('new_description').value;
@@ -115,26 +122,21 @@ form[0].addEventListener('submit', (e) => {
 
 document.querySelector('.create_room_btn').addEventListener('click',(event) => {
     event.preventDefault();
-
-    const create_title = document.getElementById('create_title').value;
-    const create_description = document.getElementById('create_description').value;
-    const create_people_count = document.getElementById('create_people_count').value;
-    const create_square = document.getElementById('create_square').value;
-    const create_price = document.getElementById('create_price').value;
-    const create_img = document.getElementById('create_img').value;
+    const input_photo = document.querySelector('input[type="file"]')
+    let create_data = new FormData()
+    create_data.append('create_img', input_photo.files[0])
+    create_data.append('create_title', document.getElementById('create_title').value)
+    create_data.append('create_description', document.getElementById('create_description').value)
+    create_data.append('create_people_count', document.getElementById('create_people_count').value)
+    create_data.append('create_square', document.getElementById('create_square').value)
+    create_data.append('create_price', document.getElementById('create_price').value)
     fetch("./assets/api/createProduct.php", {
         method: "POST",
-        body: JSON.stringify({
-            create_title,
-            create_description,
-            create_people_count,
-            create_square,
-            create_price,
-            create_img
-        }),
+        body: create_data,
     })
         .then((response) => response.json())
         .then((data) => {
+            console.log(data)
             if (data.status) {
                 alert(data.message);
                 location.reload();
