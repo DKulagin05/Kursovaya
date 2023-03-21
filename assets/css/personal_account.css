@@ -2,3 +2,9 @@
     display: flex;
     gap: 50px;
 }
+input[type="text"] {
+    width: 100px !important;
+}
+.edit_personal_data {
+
+}

@@ -51,7 +51,6 @@ form[0].addEventListener('submit', (e) => {
                         <td><input id="new_price" type="text" value="${room.price}"></td>
                         <td><input id="new_img" type="file" value="${room.img}"></td>
                         <td><button class="save_changes">Сохранить изменения</button></td>
-                        
                     </tr>
                 </tbody>
             </table>
@@ -64,39 +63,24 @@ form[0].addEventListener('submit', (e) => {
 
                 save_changes.addEventListener("click", (event) => {
                     event.preventDefault();
-                    const input_create_photo = document.querySelector('input[type="file"]')
-                    let create_data = new FormData()
-                    create_data.append('create_img', input_photo.files[0])
-                    create_data.append('create_title', document.getElementById('create_title').value)
-                    create_data.append('create_description', document.getElementById('create_description').value)
-                    create_data.append('create_people_count', document.getElementById('create_people_count').value)
-                    create_data.append('create_square', document.getElementById('create_square').value)
-                    create_data.append('create_price', document.getElementById('create_price').value)
-                    const id = document.getElementById('old_id').value;
-                    const new_title = document.getElementById('new_title').value;
-                    const new_description = document.getElementById('new_description').value;
-                    const new_people_count = document.getElementById('new_people_count').value;
-                    const new_square = document.getElementById('new_square').value;
-                    const new_price = document.getElementById('new_price').value;
-                    const new_img = document.getElementById('new_img').value;
+                    const input_edit_photo = document.querySelector('input[type="file"]')
+                    let edit_data = new FormData()
+                    edit_data.append('edit_img', input_edit_photo.files[0])
+                    edit_data.append('id', document.getElementById('old_id').value)
+                    edit_data.append('new_title', document.getElementById('new_title').value)
+                    edit_data.append('new_description', document.getElementById('new_description').value)
+                    edit_data.append('new_people_count', document.getElementById('new_people_count').value)
+                    edit_data.append('new_square', document.getElementById('new_square').value)
+                    edit_data.append('new_price', document.getElementById('new_price').value)
                     fetch("./assets/api/editProduct.php", {
                         method: "POST",
-                        body: JSON.stringify({
-                            id,
-                            new_title,
-                            new_description,
-                            new_people_count,
-                            new_square,
-                            new_price,
-                            new_img
-                        }),
+                        body: edit_data,
                     })
                         .then((response) => response.json())
                         .then((data) => {
                             if (data.status) {
                                 alert(data.message);
                                 location.reload();
-
                             } else {
                                 alert(data.message);
                             }

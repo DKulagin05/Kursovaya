@@ -66,7 +66,7 @@ session_start();
             <div class="slider__item filter">
                 <div class="personal_info_booking_unit">
 
-                    <img class="product_img" src="/assets/img/rent_img/rent_ico.png" alt="#">
+                    <img class="product_img" src="/assets/img/products/rent_ico.png" alt="#">
                     <div class="info_booking_body">
                         <div class="info_booking_main">
                             <div class="info_booking_header">
@@ -97,7 +97,7 @@ session_start();
             <div class="slider__item">
                 <div class="personal_info_booking_unit">
 
-                    <img class="product_img" src="/assets/img/rent_img/rent_ico.png" alt="#">
+                    <img class="product_img" src="/assets/img/products/rent_ico.png" alt="#">
                     <div class="info_booking_body">
                         <div class="info_booking_main">
                             <div class="info_booking_header">
@@ -127,7 +127,7 @@ session_start();
             </div>
             <div class="slider__item filter">
                 <div class="personal_info_booking_unit">
-                    <img class="product_img" src="/assets/img/rent_img/rent_ico.png" alt="#">
+                    <img class="product_img" src="/assets/img/products/rent_ico.png" alt="#">
                     <div class="info_booking_body">
                         <div class="info_booking_main">
                             <div class="info_booking_header">
@@ -156,7 +156,7 @@ session_start();
             </div>
             <div class="slider__item">
                 <div class="personal_info_booking_unit">
-                    <img class="product_img" src="/assets/img/rent_img/rent_ico.png" alt="#">
+                    <img class="product_img" src="/assets/img/products/rent_ico.png" alt="#">
                     <div class="info_booking_body">
                         <div class="info_booking_main">
                             <div class="info_booking_header">

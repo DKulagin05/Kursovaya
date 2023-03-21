@@ -45,7 +45,7 @@ renderAllProduct = (items) => {
         product_block_button.style.display = 'none';
         product.className = 'personal_info_booking_unit';
         product.innerHTML = `
-            <img class="product_img" src="/assets/img/rent_img/${item.img}" alt="#">
+            <img class="product_img" src="/assets/img/products/${item.img}" alt="#">
             <div class="info_booking_body">
                 <div class="info_booking_main">
                     <div class="info_booking_header">
