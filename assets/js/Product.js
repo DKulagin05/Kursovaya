@@ -150,18 +150,56 @@ renderAllProduct = (items) => {
         product.querySelector('.info_booking_btn').addEventListener('click', () => {
             let item_booking = item;
             const userId = document.getElementById("user_id").value;
+
+
+            // Тестовая часть
+            let breakfast;
+            let dinner;
+            let spa;
+            let transport;
+            if (product.querySelector('#breakfast').checked  == true) {
+                breakfast = 1
+            } else {
+                breakfast = 0
+            }
+            if (product.querySelector('#dinner').checked == true) {
+                dinner = 1
+            } else {
+                dinner = 0
+            }
+
+            if (product.querySelector('#spa').checked  == true) {
+                spa = 1
+            } else {
+                spa = 0
+            }
+            if (product.querySelector('#transport').checked  == true) {
+                transport = 1
+            } else {
+                transport = 0
+            }
+            let array_services = [
+                breakfast,
+                dinner,
+                spa,
+                transport
+            ]
+
+
             fetch('./assets/api/booking.php', {
                 method: 'POST',
                 body: JSON.stringify({
                     item_booking,
-                    userId
+                    userId,
+                    array_services
                 })
             })
                 .then(response => response.json())
                 .then(data => {
                     if(data.success) {
                         alert(data.message);
-                        window.location.href = "../personal_account.php";
+                        console.log(data.tet)
+                        // window.location.href = "../personal_account.php";
                     } else {
                         alert(data.message);
                     }

@@ -1,7 +1,8 @@
 fetch('/assets/api/personalBookingInfo.php')
     .then(response => response.json())
     .then(data => {
-        for (let item of data) {
+        console.log(data.tet)
+        for (let item of data.message) {
             let item_id = item.id;
             let products_list = document.querySelector('.products-list');
             let product = document.createElement('div');

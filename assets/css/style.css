@@ -629,7 +629,7 @@ textarea[id="hobbies"]{
 }
 .personal_info_booking_unit {
     max-width: 300px;
-    height: 500px;
+    height: 400px;
 }
 .info_booking_header h1 {
     font-family: 'Montserrat';
@@ -760,7 +760,7 @@ textarea[id="hobbies"]{
 }
 .info_booking_price_btn {
     display: flex;
-    align-items: end;
+    /*align-items: end;*/
     justify-content: space-between;
 }
 .info_booking_btn {
