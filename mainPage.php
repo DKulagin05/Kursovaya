@@ -22,25 +22,25 @@ session_start();
         <div class="head_body">
             <div class="head_booking_wnd">
                 <div class="head_booking_wnd_inputs">
-                    <div class="input_value">
-                        <h1>Количетсво человек</h1>
-                        <div class="input_value_counter"><span class="head_booking_minus">-</span><p class="head_booking_count">1</p><span class="head_booking_plus">+</span></div>
-                    </div>
-                    <form action="./product.php" method="post">
-                        <div class="input_dates">
-                            <div class="input_label">
-                                <label for="date_arrival">Дата заезда</label>
-                                <input type="date" id="date_arrival" value="<?=$today?>" required>
-                            </div>
-                            <div class="input_label">
-                                <label for="date_departure">Дата выезда</label>
-                                <input type="date" id="date_departure">
-                            </div>
-                        </div>
-                        <input type="submit" value="Подобрать">
-
-                    </form>
-
+                    <h1 style="color: white; line-height: 60px;">Бронируйте за день, на день!</h1>
+<!--                    <div class="input_value">-->
+<!--                        <h1>Количетсво человек</h1>-->
+<!--                        <div class="input_value_counter"><span class="head_booking_minus">-</span><p class="head_booking_count">1</p><span class="head_booking_plus">+</span></div>-->
+<!--                    </div>-->
+<!--                    <form action="./product.php" method="post">-->
+<!--                        <div class="input_dates">-->
+<!--                            <div class="input_label">-->
+<!--                                <label for="date_arrival">Дата заезда</label>-->
+<!--                                <input type="date" id="date_arrival" value="--><?php //=$today?><!--" required>-->
+<!--                            </div>-->
+<!--                            <div class="input_label">-->
+<!--                                <label for="date_departure">Дата выезда</label>-->
+<!--                                <input type="date" id="date_departure">-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <input type="submit" value="Подробнее">
+<!---->
+<!--                    </form>-->
                 </div>
             </div>
         </div>

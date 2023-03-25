@@ -18,7 +18,7 @@ if ($user_id != '') {
         $data[] = $row;
     }
     $id_booking_room = $data[0]['id'];
-// разобратся с boolean true false
+
     $booking_services_query = "INSERT INTO Booking_services 
     (id_booking,breakfast,dinner,spa,transport) 
     VALUES ('$id_booking_room','$array_services[0]','$array_services[1]','$array_services[2]',

@@ -2,14 +2,14 @@
 session_start();
 
 include_once 'Database.php';
-include_once "./assets/config/core.php";
-include_once "./assets/libs/php-jwt/src/BeforeValidException.php";
-include_once "./assets/libs/php-jwt/src/ExpiredException.php";
-include_once "./assets/libs/php-jwt/src/SignatureInvalidException.php";
-include_once "./assets/libs/php-jwt/src/JWT.php";
-include_once "./assets/libs/php-jwt/src/Key.php";
-use \Firebase\JWT\JWT;
-use \Firebase\JWT\Key;
+//include_once "./assets/config/core.php";
+//include_once "./assets/libs/php-jwt/src/BeforeValidException.php";
+//include_once "./assets/libs/php-jwt/src/ExpiredException.php";
+//include_once "./assets/libs/php-jwt/src/SignatureInvalidException.php";
+//include_once "./assets/libs/php-jwt/src/JWT.php";
+//include_once "./assets/libs/php-jwt/src/Key.php";
+//use \Firebase\JWT\JWT;
+//use \Firebase\JWT\Key;
 $entityBody = json_decode(file_get_contents('php://input'),true);
 if(isset($entityBody['email']) && isset($entityBody['password'])) {
     $email = $entityBody['email'];
@@ -21,8 +21,8 @@ if(isset($entityBody['email']) && isset($entityBody['password'])) {
     if (mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
         if ($password === $user['password']) {
-//            $_SESSION['auth'] = true;
-//            $_SESSION['id'] = $user['id'];
+            $_SESSION['auth'] = true;
+            $_SESSION['id'] = $user['id'];
 //            $token = array(
 //                "iss" => $iss,
 //                "aud" => $aud,
@@ -33,7 +33,7 @@ if(isset($entityBody['email']) && isset($entityBody['password'])) {
 //                    "email" => $user['email']
 //                )
 //            );
-            echo json_encode(['success' => true, 'message' => 'Успешная авторизация' , 'admin' => $user['admin']]);
+            echo json_encode(['success' => true, 'message' => 'Успешная авторизация']);
 
         } else {
             echo json_encode(['success' => false, 'message' => 'Неверный пароль']);

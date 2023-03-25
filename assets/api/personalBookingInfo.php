@@ -57,5 +57,5 @@ for ($i=0;$i<count($data_booking);$i++) {
 header('Content-Type: application/json');
 echo json_encode(['success' => true,
     'message' => $data,
-    'tet' => $result_data]);
+    'result' => $result_data]);
 mysqli_close($conn->getConnection());
