@@ -3,7 +3,8 @@ fetch('/assets/api/personalData.php',{
     method: 'POST',
     body: JSON.stringify({
         userId
-    })
+    }),
+    headers: { 'Content-Type': 'application/json' }
 })
     .then(response => response.json())
     .then(data => {
@@ -73,6 +74,7 @@ fetch('/assets/api/personalData.php',{
                 fetch("./assets/api/editPersonalData.php", {
                     method: "POST",
                     body: edit_data,
+                    headers: { 'Content-Type': 'application/json' }
                 })
                     .then((response) => response.json())
                     .then((data) => {

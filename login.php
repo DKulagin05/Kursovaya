@@ -11,7 +11,7 @@ session_start();
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="assets/js/login.js" defer></script>
+    <script type="module" src="assets/js/login.js" defer></script>
     <title>Document</title>
 </head>
 <body>

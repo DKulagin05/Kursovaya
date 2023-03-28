@@ -65,6 +65,7 @@ fetch('/assets/api/personalBookingInfo.php')
                     body: JSON.stringify({
                         item_id
                     }),
+                    headers: { 'Content-Type': 'application/json' }
                 })
                     .then((response) => response.json()) // парсим ответ от сервера в формате JSON
                     .then((product_add_info) => {
@@ -136,7 +137,8 @@ fetch('/assets/api/personalBookingInfo.php')
                             body: JSON.stringify({
                                 item_booking,
                                 userId
-                            })
+                            }),
+                            headers: { 'Content-Type': 'application/json' }
                         })
                             .then(response => response.json())
                             .then(data => {

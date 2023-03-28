@@ -75,6 +75,7 @@ form[0].addEventListener('submit', (e) => {
                     fetch("./assets/api/editProduct.php", {
                         method: "POST",
                         body: edit_data,
+                        headers: { 'Content-Type': 'application/json' }
                     })
                         .then((response) => response.json())
                         .then((data) => {
@@ -117,6 +118,7 @@ document.querySelector('.create_room_btn').addEventListener('click',(event) => {
     fetch("./assets/api/createProduct.php", {
         method: "POST",
         body: create_data,
+        headers: { 'Content-Type': 'application/json' }
     })
         .then((response) => response.json())
         .then((data) => {
@@ -195,6 +197,7 @@ form[1].addEventListener('submit', (e) => {
                             delete_id,
                             delete_title
                         }),
+                        headers: { 'Content-Type': 'application/json' }
                     })
                         .then((response) => response.json())
                         .then((data) => {

@@ -1,3 +1,5 @@
+import jwt_decode from '../../node_modules/jwt-decode/build/jwt-decode';
+
 const loginForm = document.getElementById('loginForm');
 
 loginForm.addEventListener('submit', (e) => {
@@ -11,14 +13,21 @@ loginForm.addEventListener('submit', (e) => {
         body: JSON.stringify({
             email,
             password
-        })
+        }),
+        headers: { 'Content-Type': 'application/json' }
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             if (data.success) {
+
+                localStorage.setItem('token',data.token);
+
+                const token = data.token;
+                const decoded = jwt_decode(token);
+                console.log(decoded);
+                // console.log(jwt.encode(data.token));
                 alert(data.message)
-                window.location.href = '../personal_account.php';
+                // window.location.href = '../personal_account.php';
             } else {
                 alert(data.message);
             }
