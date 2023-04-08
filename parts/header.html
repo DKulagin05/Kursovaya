@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/mobile.css">
 <script src="../assets/js/header.js" defer></script>
@@ -17,7 +14,6 @@ session_start();
             <div class="header_body">
                 <div class="header_logo"><a href="../mainPage.php"><img src="../assets/img/Logo.png" alt="#"></a></div>
                 <div class="header_links">
-<!--                    <a href="./Page404.php">Бонусная программа</a>-->
                     <a href="../Promo.php">Спецпредложения</a>
                     <a href="../product.php">Бронирование</a>
                     <a href="../services.php">Услуги</a>
@@ -25,19 +21,16 @@ session_start();
                 </div>
                 <div class="header_profile">
                     <img src="../assets/img/Profile.png" alt="#">
-                    <!-- <div class="header_profile_links">
-                        <a href="">Войти</a>
-                        <a href="">Регистрация</a>
-                    </div> -->
                     <div class="window_reg_log hide">
                         <a class="header_links_mobile" href="../Promo.php">Спецпредложения</a>
                         <a class="header_links_mobile" href="../product.php">Бронирование</a>
                         <a class="header_links_mobile" href="../services.php">Услуги</a>
                         <a class="header_links_mobile" href="../contacts.php">Контакты</a>
-                        <a href="/personal_account.php" class="<?php if($_SESSION['auth']) {echo '';} else echo 'hide';?>">Профиль</a>
-                        <a href="/logout.php" class="<?php if($_SESSION['auth']) {echo '';} else echo 'hide';?>">Выйти</a>
-                        <a href="/login.php" class="<?php if($_SESSION['auth']) {echo 'hide';} else echo '';?>">Войти</a>
-                        <a href="/registration.php" class="<?php if($_SESSION['auth']) {echo 'hide';} else echo '';?>">Регистрация</a>
+                        <a href="/personal_account.php" class="profile hide">Профиль</a>
+                        <a href="/logout.php" class="logout hide">Выйти</a>
+
+                        <a href="/login.php" class="login">Войти</a>
+                        <a href="/registration.php" class="registration">Регистрация</a>
                     </div>
                 </div>
             </div>

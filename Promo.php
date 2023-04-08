@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-    include_once './parts/header.php';
+    include_once './parts/header.html';
     ?>
     <section class="main-sec">
         <div class="wrapper">
@@ -20,7 +20,7 @@
         </div>
     </section>
     <?php
-    require_once './parts/footer.php';
+    require_once './parts/footer.html';
     ?>
 
 </body>

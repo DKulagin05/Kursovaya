@@ -1,5 +1,4 @@
 const userId = document.getElementById("user_id").value;
-
 fetch('/assets/api/personalData.php',{
     method: 'POST',
     body: JSON.stringify({
@@ -9,7 +8,6 @@ fetch('/assets/api/personalData.php',{
 })
     .then(response => response.json())
     .then(data => {
-
         let personal_data_block = document.querySelector('.personal_info_body');
         personal_data_block.innerHTML = `
             <div class="personal_img"><img style="width: 300px; height:300px;" src="./assets/img/profile_pictures/${data[0].img}" alt="Profile_Img"></div>
@@ -58,6 +56,7 @@ fetch('/assets/api/personalData.php',{
             document.querySelector('.edit_personal_data').classList.toggle('hide')
         })
         let form = document.querySelector('form')
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
                 const input_edit_photo = document.querySelector('input[type="file"]')

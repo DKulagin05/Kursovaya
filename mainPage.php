@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
 <?php
-    include_once './parts/header.php';
+    include_once './parts/header.html';
     $today = date("Y-m-d");
 ?>
 <div class="head_box">
@@ -224,7 +224,7 @@ session_start();
     <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/56/chelyabinsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Челябинск</a><a href="https://yandex.ru/maps/56/chelyabinsk/house/ulitsa_entuziastov_17/YkgYdQBnS0UEQFtvfX10cHxkYQ==/?indoorLevel=1&ll=61.378359%2C55.150621&utm_medium=mapframe&utm_source=maps&z=16.95" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Энтузиастов, 17 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=61.378359%2C55.150621&mode=whatshere&whatshere%5Bpoint%5D=61.377582%2C55.151057&whatshere%5Bzoom%5D=17&z=16.95" width="100%" height="500" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe></div>
 </div>
 <?php
-require_once './parts/footer.php';
+require_once './parts/footer.html';
 
 ?>
 </body>

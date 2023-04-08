@@ -1,13 +1,5 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "",'Coursework');
-$id = $_SESSION["id"];
-$query = "SELECT * FROM Users WHERE id = '$id'";
-$result = mysqli_query($conn, $query);
-
-if (mysqli_num_rows($result) > 0) {
-    $user = mysqli_fetch_assoc($result);
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,7 +16,7 @@ if (mysqli_num_rows($result) > 0) {
 </head>
 <body>
 <?php
-include_once './parts/header.php';
+include_once './parts/header.html';
 ?>
 <?php
 session_start();
@@ -60,31 +52,7 @@ $id = $_SESSION['id'];
 
 
 <?php
-//require_once './parts/footer.php';
-//
-//// Подключаемся к базе данных
-//$dsn = 'mysql:host=localhost;dbname=Coursework';
-//$username = 'root';
-//$password = '';
-//$options = [
-//    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-//    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-//    PDO::ATTR_EMULATE_PREPARES => false,
-//];
-//try {
-//    $pdo = new PDO($dsn, $username, $password, $options);
-//} catch (\PDOException $e) {
-//    throw new \PDOException($e->getMessage(), (int)$e->getCode());
-//}
-//
-//// Выполняем запрос на получение данных из базы данных
-//$stmt = $pdo->query('SELECT * FROM Users');
-//$data = $stmt->fetchAll();
-//
-//// Выводим данные в формате JSON
-//header('Content-Type: application/json');
-//echo json_encode($data);
-
-//?>
+    require_once './parts/footer.html';
+?>
 </body>
 </html>

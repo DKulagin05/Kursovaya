@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php
-    require_once './parts/header.php';
+    require_once './parts/header.html';
 ?>
 <div class="adminPage_body">
 <!--    <div class="admin_info">-->
@@ -62,7 +62,7 @@
     </div>
 </div>
 <?php
-    require_once './parts/footer.php';
+    require_once './parts/footer.html';
 ?>
 </body>
 </html>

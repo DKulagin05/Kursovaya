@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
 <?php
-include_once './parts/header.php';
+include_once './parts/header.html';
 ?>
     <div class="registration_sec">
         <div class="wrapper">
@@ -70,7 +70,7 @@ include_once './parts/header.php';
         </div>
     </div>
 <?php
-require_once './parts/footer.php';
+require_once './parts/footer.html';
 ?>
 </body>
 </html>

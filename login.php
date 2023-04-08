@@ -17,7 +17,7 @@ session_start();
 <body>
 <div class="reg_header">
     <?php
-    include_once './parts/header.php';
+    include_once './parts/header.html';
     ?>
 </div>
 <div class="registration_sec">
@@ -45,7 +45,7 @@ session_start();
     </div>
 </div>
     <?php
-    require_once './parts/footer.php';
+    require_once './parts/footer.html';
     ?>
 </body>
 </html>

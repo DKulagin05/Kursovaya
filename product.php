@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php
-include_once './parts/header.php';
+include_once './parts/header.html';
 ?>
 
 <?php
@@ -96,7 +96,7 @@ $id = $_SESSION['id'];
     </section>
     
 <?php
-require_once './parts/footer.php';
+require_once './parts/footer.html';
 ?>
 </body>
 </html>
