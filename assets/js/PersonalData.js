@@ -1,4 +1,5 @@
 const userId = document.getElementById("user_id").value;
+
 fetch('/assets/api/personalData.php',{
     method: 'POST',
     body: JSON.stringify({
@@ -8,6 +9,7 @@ fetch('/assets/api/personalData.php',{
 })
     .then(response => response.json())
     .then(data => {
+
         let personal_data_block = document.querySelector('.personal_info_body');
         personal_data_block.innerHTML = `
             <div class="personal_img"><img style="width: 300px; height:300px;" src="./assets/img/profile_pictures/${data[0].img}" alt="Profile_Img"></div>

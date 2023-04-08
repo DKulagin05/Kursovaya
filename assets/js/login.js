@@ -1,4 +1,4 @@
-import jwt_decode from '../../node_modules/jwt-decode/build/jwt-decode';
+// import jwt_decode from '../../node_modules/jwt-decode/build/jwt-decode.js';
 
 const loginForm = document.getElementById('loginForm');
 
@@ -22,12 +22,12 @@ loginForm.addEventListener('submit', (e) => {
 
                 localStorage.setItem('token',data.token);
 
-                const token = data.token;
-                const decoded = jwt_decode(token);
-                console.log(decoded);
+                // const token = data.token;
+                // const decoded = jwt_decode(token);
+                // console.log(decoded);
                 // console.log(jwt.encode(data.token));
                 alert(data.message)
-                // window.location.href = '../personal_account.php';
+                window.location.href = '../personal_account.php';
             } else {
                 alert(data.message);
             }

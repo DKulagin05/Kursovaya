@@ -33,7 +33,7 @@ if(isset($entityBody['email']) && isset($entityBody['password'])) {
                 "nbf" => $nbf,
                 "data" => array(
                     "id" => $user['id'],
-                    "email" => $user['email']
+                    "admin" => $user['admin']
                 )
             );
             $jwt = JWT::encode($token, $key, 'HS256');

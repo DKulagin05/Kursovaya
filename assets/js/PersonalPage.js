@@ -1,10 +1,10 @@
 fetch('/assets/api/personalBookingInfo.php')
     .then(response => response.json())
     .then(data => {
+        const token = localStorage.getItem('token');
         for (let i in data.result) {
             let item = data.result[i][1];
             let services = data.result[i][0];
-            console.log(services)
                 let item_id = item.id;
                 let products_list = document.querySelector('.products-list');
                 let product = document.createElement('div');
@@ -63,11 +63,12 @@ fetch('/assets/api/personalBookingInfo.php')
                                    ${fetch("./assets/api/ProductDataAdd.php", {
                     method: "POST",
                     body: JSON.stringify({
-                        item_id
+                        item_id,
+                        token
                     }),
                     headers: { 'Content-Type': 'application/json' }
                 })
-                    .then((response) => response.json()) // парсим ответ от сервера в формате JSON
+                    .then((response) => response.json())
                     .then((product_add_info) => {
                         let product_add_info_block = product.querySelector('.product_add_info_block');
                         let htmlStrings = [];
@@ -112,7 +113,6 @@ fetch('/assets/api/personalBookingInfo.php')
                 let info_booking_add_info = product.querySelector('.info_booking_add_info');
                 let product_zero = document.querySelector('.product_zero')
                 product_zero.classList.add('hide')
-                // let info_booking_add_img = product.querySelector('.info_booking_add_img')
                 info_booking_body.onmouseenter = () => {
                     info_booking_add_info.classList.remove('hide');
                     info_booking_add_info.style.cssText = 'z-index: 2; background: #CCECEB;';
